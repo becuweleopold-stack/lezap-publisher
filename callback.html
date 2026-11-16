@@ -1,0 +1,11 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Autorisation TikTok</title><link rel="stylesheet" href="style.css"></head><body>
+<h1>Autorisation TikTok</h1>
+<p id="msg">Lecture du code…</p>
+<p><code id="code"></code></p>
+<script>
+const p = new URLSearchParams(location.search);
+const code = p.get('code'), err = p.get('error');
+document.getElementById('msg').textContent = code ? "C'est autorisé. Copie ce code et colle-le à Claude :" : ("Pas de code reçu" + (err ? " (" + err + ")" : "") + ".");
+if (code) document.getElementById('code').textContent = code;
+</script>
+</body></html>
